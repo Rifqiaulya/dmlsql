@@ -85,10 +85,60 @@ WHERE category IS NULL;
 SELECT *
 FROM products
 WHERE price BETWEEN 10000 AND 20000;
---WHERE dan IN (mencari beberapa nilai)
+--WHERE dan IN (mencari beberapa nilai); coba NOT IN
 SELECT *
 FROM products
 WHERE category IN ('Makanan', 'Minuman');
+-- ORDER BY (mengurutkan);*defaultnya ASC dari alfabet/terkecil
+SELECT id, category, name
+FROM products
+ORDER BY category;
+-- LIMIT (membatasi data)
+SELECT *
+FROM products
+ORDER BY id
+LIMIT 5;
+--- LIMIT skip hingga baris 10, ambil baris 5 selanjutnya
+SELECT *
+FROM products
+ORDER BY id
+LIMIT 10, 5;
+-- DISTINCT (menghilangkan duplikat)
+SELECT DISTINCT category
+FROM products;
+-- operator aritmatika;petik karena spasi
+SELECT id, name, price, price DIV 1000 AS 'Price in K'
+FROM products;
+-- fungsi matematika;
+SELECT id, COS(price), SIN(price), TAN(price)
+FROM products;
+
+
+-- AUTO INCREMENT (id otomatis)
+CREATE TABLE admin
+(
+    id         INT          NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(100) NOT NULL,
+    last_name  VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+);
+-- INSERT INTO dan melihat
+INSERT INTO admin(first_name, last_name)
+VALUES ('Eko', 'Khannedy'),
+       ('Budi', 'Nugraha'),
+       ('Joko', 'Morro');
+       
+SELECT * FROM admin;
+SELECT LAST_INSERT_ID();
+-- menambah dan lihat last insert id
+INSERT INTO admin(first_name, last_name)
+VALUES ('Rully', 'Hidayat');
+SELECT LAST_INSERT_ID();
+--
+
+
+
+
 
 
 
