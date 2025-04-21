@@ -114,32 +114,6 @@ SELECT id, COS(price), SIN(price), TAN(price)
 FROM products;
 
 
--- AUTO INCREMENT (id otomatis)
-CREATE TABLE admin
-(
-    id         INT          NOT NULL AUTO_INCREMENT,
-    first_name VARCHAR(100) NOT NULL,
-    last_name  VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id)
-);
--- INSERT INTO dan melihat
-INSERT INTO admin(first_name, last_name)
-VALUES ('Eko', 'Khannedy'),
-       ('Budi', 'Nugraha'),
-       ('Joko', 'Morro');
-       
-SELECT * FROM admin;
-SELECT LAST_INSERT_ID();
--- menambah dan lihat last insert id
-INSERT INTO admin(first_name, last_name)
-VALUES ('Rully', 'Hidayat');
-SELECT LAST_INSERT_ID();
---
-
-
-
-
-
 
 
 
